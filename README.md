@@ -1,3 +1,7 @@
+# This is yet another alternative version
+I didn't like the way that the songs were displayed in rich presence, so now, it looks like this:
+![preview](images/preview.png)
+
 <center><img align="right" src="images/buffering_mpv_stream.png"></center>
 <h1 align="center"><a href="https://github.com/cniw/mpv-discordRPC">mpv-discordRPC</a></h1>
 <p align="center"><b>Discord Rich Presence intergation for mpv Media Player</b></p>
