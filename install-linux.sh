@@ -47,7 +47,7 @@ echo "[${NAME}] │   │   └── installing 'pypresence'"
 fi
 if [ ! -f ./mpv-discordRPC_pypresence.py ]; then
 echo "[${NAME}] │   ├── downloading 'mpv-discordRPC_pypresence.py'"
-    wget -q -c "https://github.com/cniw/mpv-discordRPC/raw/master/mpv-discordRPC_pypresence.py"
+    wget -q -c "https://github.com/nunner/mpv-discordRPC/raw/master/mpv-discordRPC_pypresence.py"
 fi
 echo "[${NAME}] │   └── installing 'mpv-discordRPC_pypresence.py'"
 cp ./mpv-discordRPC_pypresence.py "${SCRIPTS_DIR}"
@@ -63,15 +63,15 @@ cp ./status-line.lua "${SCRIPTS_DIR}"
 echo "[${NAME}] installing main script"
 if [ ! -f ./mpv_discordRPC.conf ]; then
 echo "[${NAME}] ├── downloading 'mpv_discordRPC.conf'"
-    wget -q -c "https://github.com/cniw/mpv-discordRPC/raw/master/mpv_discordRPC.conf"
+    wget -q -c "https://github.com/nunner/mpv-discordRPC/raw/master/mpv_discordRPC.conf"
 fi
 if [ ! -f ./mpv-discordRPC_catalogs.lua ]; then
 echo "[${NAME}] ├── downloading 'mpv-discordRPC_catalogs.lua'"
-    wget -q -c "https://github.com/cniw/mpv-discordRPC/raw/master/mpv-discordRPC_catalogs.lua"
+    wget -q -c "https://github.com/nunner/mpv-discordRPC/raw/master/mpv-discordRPC_catalogs.lua"
 fi
 if [ ! -f ./mpv-discordRPC.lua ]; then
 echo "[${NAME}] ├── downloading 'mpv-discordRPC.lua'"
-    wget -q -c "https://github.com/cniw/mpv-discordRPC/raw/master/mpv-discordRPC.lua"
+    wget -q -c "https://github.com/nunner/mpv-discordRPC/raw/master/mpv-discordRPC.lua"
 fi
 echo "[${NAME}] ├── installing 'mpv_discordRPC.conf'"
 cp ./mpv_discordRPC.conf "${SCRIPT_OPTS_DIR}"
