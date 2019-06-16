@@ -51,15 +51,6 @@ local function main()
 	local metadataTitle = mp.get_property_native("metadata/by-key/Title")
 	local metadataArtist = mp.get_property_native("metadata/by-key/Artist")
 	local metadataAlbum = mp.get_property_native("metadata/by-key/Album")
-	if metadataTitle ~= nil then
-		details = metadataTitle
-	end
-	if metadataArtist ~= nil then
-		details = ("%s\nby %s"):format(details, metadataArtist)
-	end
-	if metadataAlbum ~= nil then
-		details = ("%s\non %s"):format(details, metadataAlbum)
-	end
 	if details == nil then
 		details = "No file"
 	end
