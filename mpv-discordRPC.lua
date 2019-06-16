@@ -8,11 +8,11 @@ local options = require 'mp.options'
 
 -- set [options]
 local o = {
-	rpc_wrapper = "lua-discordRPC",
+	rpc_wrapper = "pypresence",
 	-- Available option, to set `rpc_wrapper`:
 	-- * lua-discordRPC
 	-- * pypresence
-	periodic_timer = 15,
+	periodic_timer = 3,
 	-- Recommendation value, to set `periodic_timer`:
 	-- value >= 1 second, if use lua-discordRPC,
 	-- value >= 3 second, if use pypresence (for the python3::asyncio process),
@@ -60,20 +60,17 @@ local function main()
 	local pausedFC = mp.get_property_bool("paused-for-cache")
 	local pause = mp.get_property_bool("pause")
 	local play = coreIdle and false or true
+	local state = "by " .. metadataArtist
 	if idle then
-		state = "(Idle)"
 		smallImageKey = "player_stop"
 		smallImageText = "Idle"
 	elseif pausedFC then
-		state = ""
 		smallImageKey = "player_pause"
 		smallImageText = "Buffering"
 	elseif pause then
-		state = ""
 		smallImageText = "Paused"
 		smallImageKey = "player_pause"
 	elseif play then
-		state = "(Playing) "
 		smallImageKey = "player_play"
 		smallImageText = "Playing"
 	end
@@ -101,7 +98,6 @@ local function main()
 			end
 			loop = (" - Loop: %s"):format(loop)
 		end
-		state = state .. mp.get_property("options/term-status-msg")
 		smallImageText = ("%s%s%s"):format(smallImageText, playlist, loop)
 	end
 	-- set time
@@ -170,7 +166,6 @@ local function main()
 		smallImageText = smallImageText,
 	}
 	if url ~= nil and stream == nil then
-		presence.state = "(Loading)"
 		presence.startTimestamp = math.floor(startTime)
 		presence.endTimestamp = nil
 	end
