@@ -60,6 +60,9 @@ local function main()
 	local pausedFC = mp.get_property_bool("paused-for-cache")
 	local pause = mp.get_property_bool("pause")
 	local play = coreIdle and false or true
+	if metadataArtist == 0 or metadataArtist == nil or metadataArtist == "" then
+		metadataArtist = "[no artist tagged]"
+	end
 	local state = "by " .. metadataArtist
 	if idle then
 		smallImageKey = "player_stop"
